@@ -1,150 +1,111 @@
-/* Минималистичный сброс стилей */
-* {
+/* Минималистичный и современный стиль для всех разделов сайта */
+
+/* Общие стили */
+body {
+    background-color: #f7f9fc;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #2c3e50;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
 header {
-    background-color: #1f1f1f;
-    color: #fff;
+    background-color: #34495e;
+    color: white;
+    padding: 20px 0;
     text-align: center;
-    padding: 2rem 0;
-}
-
-header h1 {
     font-size: 2.5rem;
-    letter-spacing: 1px;
-}
-
-nav {
-    background-color: #333;
-    padding: 1rem;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-}
-
-nav ul li {
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #76c7c0;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 main {
-    flex: 1;
-    padding: 2rem;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #333;
+    font-size: 1.8rem;
+    color: #2980b9;
+    margin-bottom: 20px;
 }
 
-input, select, button {
-    padding: 10px 15px;
-    margin-top: 10px;
-    border: 1px solid #ddd;
+label {
     font-size: 1.1rem;
-    border-radius: 5px;
+    color: #34495e;
+}
+
+/* Интерактивные элементы */
+input[type="file"], select, button {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 15px;
+    margin: 15px 0;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
-input:focus, button:focus, select:focus {
-    outline: none;
-    box-shadow: none;
+input[type="file"], select {
+    background-color: #ecf0f1;
+    cursor: pointer;
 }
 
 button {
-    background-color: #76c7c0;
-    color: #fff;
+    background-color: #3498db;
+    color: white;
+    font-weight: 600;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #66b2ac;
+    background-color: #2980b9;
 }
 
-canvas {
-    margin-top: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    display: none;
+button:focus, select:focus, input:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
 }
 
-/* Стили для всех разделов сайта */
-.section {
-    margin: 20px auto;
-    max-width: 800px;
-    text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-}
-
+/* Прогресс-бар */
 #progress-container {
+    display: none;
+    margin-top: 20px;
     width: 100%;
     max-width: 400px;
-    margin: 20px auto;
-    text-align: center;
-    display: none; /* Скрываем по умолчанию */
 }
 
 #progress-bar {
     width: 100%;
-    height: 25px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #ecf0f1;
+    overflow: hidden;
+}
+
+#progress-bar::-webkit-progress-value {
+    background-color: #3498db;
 }
 
 #progress-text {
-    display: block;
-    margin-top: 10px;
-    font-size: 1.2rem;
-}
-
-.section h2 {
-    font-size: 1.8rem;
-    color: #222;
-    margin-bottom: 1rem;
-}
-
-.section p {
     font-size: 1.1rem;
-    color: #555;
+    margin-top: 10px;
+    color: #2980b9;
 }
 
 footer {
-    background-color: #1f1f1f;
-    color: #fff;
+    background-color: #34495e;
+    color: white;
     text-align: center;
-    padding: 1rem 0;
+    padding: 10px 0;
+    font-size: 0.9rem;
     position: absolute;
     bottom: 0;
     width: 100%;

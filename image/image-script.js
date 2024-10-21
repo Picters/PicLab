@@ -6,7 +6,7 @@ const progressBar = document.getElementById('progress-bar');
 const progressText = document.getElementById('progress-text');
 const progressContainer = document.getElementById('progress-container');
 
-// Загрузка изображения
+// Убираем отображение изображения после загрузки
 uploadImage.addEventListener('change', function () {
     const file = this.files[0];
     if (file) {
@@ -17,8 +17,7 @@ uploadImage.addEventListener('change', function () {
                 canvas.width = img.width;
                 canvas.height = img.height;
                 ctx.drawImage(img, 0, 0);
-                canvas.style.display = 'block';
-                console.log('Image loaded and ready for compression.');
+                console.log('Image loaded, but not displayed.');
             }
             img.src = event.target.result;
         }
@@ -28,7 +27,6 @@ uploadImage.addEventListener('change', function () {
 
 // Применение пикселизации и скачивание изображения
 reduceQuality.addEventListener('click', function () {
-    // Проверяем, загружено ли изображение
     if (canvas.width === 0 || canvas.height === 0) {
         alert('Please upload an image first.');
         return;
@@ -36,24 +34,21 @@ reduceQuality.addEventListener('click', function () {
 
     console.log('Starting image pixelation process');
 
-    // Показываем прогресс-бар
     progressContainer.style.display = 'block';
     progressBar.value = 0;
     progressText.innerText = '0%';
 
     let progress = 0;
 
-    // Эмуляция прогресса
     const interval = setInterval(() => {
-        progress += 20; // Увеличиваем прогресс каждые 300 мс
+        progress += 20;
         progressBar.value = progress;
         progressText.innerText = `${progress}%`;
 
         if (progress >= 100) {
             clearInterval(interval);
 
-            // Пикселизация: уменьшаем размер изображения до минимума и увеличиваем обратно
-            const pixelationLevel = 0.05; // Уровень пикселизации: 5% от оригинального размера
+            const pixelationLevel = 0.05; 
             const smallWidth = Math.floor(canvas.width * pixelationLevel);
             const smallHeight = Math.floor(canvas.height * pixelationLevel);
 
@@ -62,29 +57,21 @@ reduceQuality.addEventListener('click', function () {
             smallCanvas.width = smallWidth;
             smallCanvas.height = smallHeight;
 
-            // Сжимаем изображение до маленького размера
             smallCtx.drawImage(canvas, 0, 0, smallWidth, smallHeight);
-
-            // Затем растягиваем его обратно до оригинального размера
             ctx.drawImage(smallCanvas, 0, 0, smallWidth, smallHeight, 0, 0, canvas.width, canvas.height);
 
-            // Сохраняем пикселизированное изображение
             canvas.toBlob(function (blob) {
                 const link = document.createElement('a');
                 link.href = URL.createObjectURL(blob);
                 link.download = 'very-bad-quality-image.jpg';
-
-                // Программный клик для скачивания изображения
                 link.click();
 
                 console.log('Image pixelated and download initiated.');
 
-                // Освобождаем объект URL после скачивания
                 URL.revokeObjectURL(link.href);
 
-                // Скрываем прогресс-бар после завершения
                 progressContainer.style.display = 'none';
-            }, 'image/jpeg', 0.1); // Максимальное сжатие
+            }, 'image/jpeg', 0.1);
         }
-    }, 300); // Интервал обновления прогресс-бара
+    }, 300);
 });
