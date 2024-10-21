@@ -6,15 +6,18 @@ const progressBar = document.getElementById('progress-bar');
 const progressText = document.getElementById('progress-text');
 const progressContainer = document.getElementById('progress-container');
 
+// Подключение FFmpeg
+const { createFFmpeg, fetchFile } = FFmpeg;
+const ffmpeg = createFFmpeg({ log: true });
+
 videoInput.addEventListener('change', function () {
     const file = this.files[0];
     if (file) {
-        // Обработка загруженного видео
         console.log('Video uploaded:', file.name);
     }
 });
 
-applyChanges.addEventListener('click', function () {
+applyChanges.addEventListener('click', async function () {
     const fps = fpsInput.value;
     const quality = qualitySelect.value;
 
@@ -23,35 +26,43 @@ applyChanges.addEventListener('click', function () {
         return;
     }
 
-    console.log('Applying changes:', { fps, quality });
+    const file = videoInput.files[0];
+    const fileName = file.name;
+    const outputFileName = 'output_' + fileName;
 
     // Показываем прогресс-бар
     progressContainer.style.display = 'block';
     progressBar.value = 0;
     progressText.innerText = '0%';
 
-    let progress = 0;
-    const interval = setInterval(() => {
-        progress += 20;
-        progressBar.value = progress;
-        progressText.innerText = `${progress}%`;
+    // Загружаем FFmpeg.js
+    await ffmpeg.load();
 
-        if (progress >= 100) {
-            clearInterval(interval);
+    // Загружаем видео в FFmpeg
+    ffmpeg.FS('writeFile', fileName, await fetchFile(file));
 
-            // Логика обработки видео должна быть здесь
-            alert(`Video processed with FPS: ${fps} and Quality: ${quality}p`);
+    // Выполняем обработку видео: изменяем FPS и качество
+    await ffmpeg.run(
+        '-i', fileName,
+        '-r', fps,              // Устанавливаем кадры в секунду (FPS)
+        '-s', `${quality}p`,    // Устанавливаем качество видео (разрешение)
+        outputFileName
+    );
 
-            // Скачивание готового видео
-            const link = document.createElement('a');
-            link.href = 'path/to/your/video.mp4'; // Здесь укажите путь к готовому видео
-            link.download = 'modifed.mp4'; // Название для скачиваемого файла
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+    // Извлекаем обработанное видео
+    const data = ffmpeg.FS('readFile', outputFileName);
 
-            // Скрываем прогресс-бар после завершения
-            progressContainer.style.display = 'none';
-        }
-    }, 500);
+    // Создаем Blob из обработанного видео
+    const videoBlob = new Blob([data.buffer], { type: 'video/mp4' });
+
+    // Создаем ссылку для скачивания видео
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(videoBlob);
+    link.download = outputFileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // Скрываем прогресс-бар после завершения
+    progressContainer.style.display = 'none';
 });
