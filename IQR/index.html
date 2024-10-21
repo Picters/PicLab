@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PicLab - Image Quality Reduction</title>
-    <link rel="stylesheet" href="image-style.css">
+    <title>PicLab - IQR</title>
+    <link rel="stylesheet" href="iqr-style.css">
 </head>
 <body>
     <header>
-        <h1>PicLab - Image Quality Reduction</h1>
+        <h1>PicLab - IQR</h1>
     </header>
     <main class="section">
-        <h2>Reduce Image Quality</h2>
+        <h2>Image Quality Reduction</h2>
         <input type="file" id="uploadImage" accept="image/*">
-        <label for="quality">Choose quality level:</label>
-        <select id="quality" disabled>
-            <option value="0.05">Very Bad</option>
-        </select>
-        <button id="reduceQuality">Apply</button>
+        <br><br>
+        <label>
+            <input type="checkbox" id="contrastOption"> Contrast (Max Contrast)
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" id="graphicsOption"> Graphics (Low Quality)
+        </label>
+        <br><br>
+        <button id="applyChanges">Apply</button>
         <canvas id="canvas" style="display:none;"></canvas>
         <div id="progress-container">
             <progress id="progress-bar" value="0" max="100"></progress>
@@ -27,6 +32,6 @@
     <footer>
         <p>&copy; 2024 PicLab</p>
     </footer>
-    <script src="image-script.js"></script>
+    <script src="iqr-script.js"></script>
 </body>
 </html>

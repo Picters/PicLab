@@ -1,4 +1,4 @@
-/* “емна€ тема дл€ раздела PicLab/Image с минимализмом */
+/* “емна€ тема дл€ раздела PicLab/IQR с минимализмом */
 
 body {
     background-color: #1e1e1e;
@@ -40,11 +40,11 @@ h2 {
 label {
     font-size: 1.2rem;
     color: #ecf0f1;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     display: block;
 }
 
-input[type="file"], select, button {
+input[type="file"], button {
     width: 100%;
     max-width: 400px;
     padding: 15px;
@@ -56,7 +56,7 @@ input[type="file"], select, button {
     transition: all 0.3s ease;
 }
 
-input[type="file"], select {
+input[type="file"] {
     background-color: #e8ecf1;
     cursor: pointer;
 }
@@ -73,7 +73,7 @@ button:hover {
     background-color: #16a085;
 }
 
-button:focus, select:focus, input:focus {
+button:focus, input:focus {
     outline: none;
     box-shadow: 0 0 10px rgba(26, 188, 156, 0.5);
 }
