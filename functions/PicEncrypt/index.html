@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PicEncrypt - Image Encryption</title>
+    <link rel="stylesheet" href="PicEncrypt-style.css">
+    <script src="PicEncrypt-script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>PicEncrypt</h1>
+    </header>
+    <main>
+        <section class="encrypt-section">
+            <p>Encrypt your images to protect personal data. Use a key to encrypt and decrypt.</p>
+            <input type="file" id="encryptUpload" accept="image/*">
+            <input type="text" id="encryptionKey" placeholder="Enter encryption key">
+            <button onclick="encryptImage()">Encrypt Image</button>
+            <div id="encryptedOutput"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 PicLab</p>
+    </footer>
+</body>
+</html>

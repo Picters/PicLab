@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PicMirror - Mirror and Symmetry Effect</title>
+    <link rel="stylesheet" href="PicMirror-style.css">
+    <script src="PicMirror-script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>PicMirror</h1>
+    </header>
+    <main>
+        <section class="mirror-section">
+            <p>Transform your images by mirroring or creating symmetric art.</p>
+            <input type="file" id="mirrorUpload" accept="image/*">
+            <canvas id="mirrorCanvas" width="400" height="400"></canvas>
+            <button onclick="applyMirror()">Apply Mirror Effect</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 PicLab</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PicPuzzle - Create Your Puzzle</title>
+    <link rel="stylesheet" href="PicPuzzle-style.css">
+    <script src="PicPuzzle-script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>PicPuzzle</h1>
+    </header>
+    <main>
+        <section class="puzzle-section">
+            <p>Turn any image into a puzzle and interactively solve it in your browser.</p>
+            <input type="file" id="puzzleUpload" accept="image/*">
+            <button onclick="createPuzzle()">Create Puzzle</button>
+            <div id="puzzleContainer"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 PicLab</p>
+    </footer>
+</body>
+</html>
