@@ -58,12 +58,14 @@ main {
     margin: 0;
 }
 
-/* Стили для неактивной кнопки */
+/* Стили для неактивной кнопки VQR */
 .function-block.inactive {
-    background-color: #7f8c8d;
+    background-color: #7f8c8d; /* Серый цвет для неактивной кнопки */
+    color: #bdc3c7; /* Светло-серый текст */
     cursor: not-allowed;
     box-shadow: none;
     transform: none;
+    pointer-events: none; /* Отключаем кликабельность */
 }
 
 .function-block.inactive:hover {
