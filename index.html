@@ -8,9 +8,40 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        .picosint-block {
+            background: linear-gradient(135deg, #ff4b2b, #ff416c);
+            text-align: center;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+            transform-origin: center;
+        }
+        .picosint-block:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+        }
+        .picosint-block h1 {
+            color: #ffffff;
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
 </head>
 <body>
     <header>
+        <div class="picosint-block">
+            <h1>PicOSINT</h1>
+        </div>
         <h1>PicLab</h1>
     </header>
     <main>
