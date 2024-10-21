@@ -87,6 +87,11 @@ input[type="number"], select, button {
     transition: all 0.3s ease;
 }
 
+/* ֿנטלונ ס רנטפעמל Roboto */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 button {
     background-color: #1abc9c;
     color: white;
