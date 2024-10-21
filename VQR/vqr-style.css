@@ -1,4 +1,4 @@
-/* “емна€ тема дл€ раздела PicLab/IQR с минимализмом */
+/* “емна€ тема дл€ раздела PicLab/VQR с минимализмом */
 
 body {
     background-color: #1e1e1e;
@@ -73,7 +73,7 @@ label.custom-file-upload:focus {
     box-shadow: 0 0 10px rgba(26, 188, 156, 0.5);
 }
 
-button {
+input[type="number"], select, button {
     width: 100%;
     max-width: 400px;
     padding: 15px;
@@ -81,11 +81,17 @@ button {
     font-size: 1.1rem;
     border: none;
     border-radius: 10px;
+    background-color: #e8ecf1;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button {
     background-color: #1abc9c;
     color: white;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
 }
 
@@ -93,7 +99,7 @@ button:hover {
     background-color: #16a085;
 }
 
-button:focus {
+button:focus, input:focus {
     outline: none;
     box-shadow: 0 0 10px rgba(26, 188, 156, 0.5);
 }
