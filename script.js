@@ -41,16 +41,17 @@ reduceQuality.addEventListener('click', function () {
     progressBar.value = 0;
     progressText.innerText = '0%';
 
-    // Используем setTimeout, чтобы симулировать процесс обработки
     let progress = 0;
-    const interval = setInterval(function () {
-        progress += 20;
+
+    // Эмуляция асинхронного процесса для обновления прогресса
+    const interval = setInterval(() => {
+        progress += 20; // Увеличиваем прогресс каждые 300 мс
         progressBar.value = progress;
         progressText.innerText = `${progress}%`;
 
         if (progress >= 100) {
             clearInterval(interval);
-            
+
             // Когда прогресс достиг 100%, начинаем процесс сжатия
             canvas.toBlob(function (blob) {
                 const link = document.createElement('a');
@@ -67,5 +68,5 @@ reduceQuality.addEventListener('click', function () {
                 progressContainer.style.display = 'none';
             }, 'image/jpeg', quality);
         }
-    }, 300);  // Интервал обновления прогресс-бара
+    }, 300); // Интервал обновления прогресс-бара
 });
