@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PicTranslate</title>
+    <link rel="stylesheet" href="PicTrans-style.css">
+</head>
+<body>
+    <header>
+        <h1>PicTranslate</h1>
+    </header>
+    <main class="translate-section">
+        <h2>Text Translator</h2>
+
+        <!-- Textarea for input -->
+        <textarea id="inputText" placeholder="Enter text to translate"></textarea>
+
+        <!-- Language selection -->
+        <div class="language-selection">
+            <label for="sourceLanguage">From:</label>
+            <select id="sourceLanguage">
+                <option value="en">English</option>
+                <option value="ru">Russian</option>
+                <option value="es">Spanish</option>
+                <!-- Add more languages as needed -->
+            </select>
+
+            <label for="targetLanguage">To:</label>
+            <select id="targetLanguage">
+                <option value="en">English</option>
+                <option value="ru">Russian</option>
+                <option value="es">Spanish</option>
+                <!-- Add more languages as needed -->
+            </select>
+        </div>
+
+        <button id="translateButton">Translate</button>
+        <div id="translation-result">
+            <h3>Translation Result:</h3>
+            <p id="translatedText">No translation available yet.</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 PicLab</p>
+    </footer>
+    <script src="PicTrans-script.js"></script>
+</body>
+</html>
