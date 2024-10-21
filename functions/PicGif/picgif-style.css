@@ -1,0 +1,117 @@
+/* Modern dark theme with orange accents for PicGif */
+
+body {
+    background-color: #1e1e1e;
+    font-family: 'Roboto', sans-serif;
+    color: #ecf0f1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: #2c3e50;
+    color: #f39c12;
+    text-align: center;
+    padding: 40px 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 0 0 30px 30px;
+}
+
+main.gif-section {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #34495e;
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #f39c12;
+    margin-bottom: 20px;
+}
+
+label.custom-file-upload {
+    display: inline-block;
+    padding: 15px 30px;
+    cursor: pointer;
+    background-color: #1abc9c;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+label.custom-file-upload:hover {
+    background-color: #16a085;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+input[type="number"] {
+    width: 100%;
+    max-width: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px;
+    margin: 15px 0;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #f39c12;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #e67e22;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    transform: translateY(-5px);
+}
+
+#gif-result {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #2c3e50;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+#gifContainer img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+    border-radius: 30px 30px 0 0;
+    box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.25);
+    margin-top: 40px;
+}
