@@ -1,5 +1,3 @@
-// PicMirror Script - JavaScript for mirroring effect
-
 function applyMirror() {
     const fileInput = document.getElementById('mirrorUpload');
     const canvas = document.getElementById('mirrorCanvas');
@@ -8,11 +6,13 @@ function applyMirror() {
     if (fileInput.files && fileInput.files[0]) {
         const img = new Image();
         img.onload = function() {
-            canvas.width = img.width;
-            canvas.height = img.height;
-            ctx.translate(img.width, 0);
+            // Устанавливаем небольшой размер окна
+            const scaleFactor = 0.3; // Коэффициент уменьшения размера (30%)
+            canvas.width = img.width * scaleFactor;
+            canvas.height = img.height * scaleFactor;
+            ctx.translate(canvas.width, 0);
             ctx.scale(-1, 1);
-            ctx.drawImage(img, 0, 0);
+            ctx.drawImage(img, 0, 0, img.width * scaleFactor, img.height * scaleFactor);
         };
         img.src = URL.createObjectURL(fileInput.files[0]);
     }

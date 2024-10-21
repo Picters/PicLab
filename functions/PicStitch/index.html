@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PicStitch - Create a Collage</title>
+    <link rel="stylesheet" href="PicStitch-style.css">
+    <script src="PicStitch-script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>PicStitch</h1>
+    </header>
+    <main>
+        <section class="stitch-section">
+            <p>Upload multiple images to create a collage using different templates and styles.</p>
+            <input type="file" id="stitchUpload" accept="image/*" multiple>
+            <button onclick="createCollage()">Create Collage</button>
+            <canvas id="collageCanvas" width="800" height="600"></canvas>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 PicLab</p>
+    </footer>
+</body>
+</html>

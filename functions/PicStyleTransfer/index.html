@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PicStyleTransfer - Style Transfer</title>
+    <link rel="stylesheet" href="PicStyleTransfer-style.css">
+    <script src="PicStyleTransfer-script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>PicStyleTransfer</h1>
+    </header>
+    <main>
+        <section class="style-transfer-section">
+            <p>Select a style image and a content image to create a unique piece of art.</p>
+            <input type="file" id="styleImage" accept="image/*">
+            <input type="file" id="contentImage" accept="image/*">
+            <button onclick="applyStyleTransfer()">Apply Style Transfer</button>
+            <canvas id="resultCanvas" width="500" height="500"></canvas>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 PicLab</p>
+    </footer>
+</body>
+</html>

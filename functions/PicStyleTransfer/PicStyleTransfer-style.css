@@ -1,4 +1,4 @@
-/* PicPuzzle Style - Modern dark theme */
+/* PicStyleTransfer Style - Modern dark theme */
 
 body {
     background-color: #1e1e1e;
@@ -22,7 +22,7 @@ header {
     border-radius: 0 0 30px 30px;
 }
 
-.puzzle-section {
+.style-transfer-section {
     max-width: 600px;
     margin: 60px auto;
     padding: 40px;
@@ -65,19 +65,9 @@ button:hover {
     transform: translateY(-5px);
 }
 
-#puzzleContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-}
-
 canvas {
-    max-width: 100%;
-    height: auto;
     border: 2px solid #f39c12;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
     margin-top: 20px;
 }
-
