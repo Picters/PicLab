@@ -1,4 +1,4 @@
-/* Темная тема для раздела PicLab/VQR с минимализмом */
+/* Dark theme for PicLab/VQR with minimalism */
 
 body {
     background-color: #1e1e1e;
@@ -44,12 +44,12 @@ label {
     display: block;
 }
 
-/* Скрываем стандартную кнопку выбора файла */
+/* Hide the standard file input */
 input[type="file"] {
     display: none;
 }
 
-/* Стили для кастомной кнопки выбора файла */
+/* Custom file upload button */
 label.custom-file-upload {
     display: inline-block;
     padding: 15px 30px;
@@ -87,11 +87,6 @@ input[type="number"], select, button {
     transition: all 0.3s ease;
 }
 
-/* Пример с шрифтом Roboto */
-body {
-    font-family: 'Roboto', sans-serif;
-}
-
 button {
     background-color: #1abc9c;
     color: white;
@@ -109,7 +104,7 @@ button:focus, input:focus {
     box-shadow: 0 0 10px rgba(26, 188, 156, 0.5);
 }
 
-/* Прогресс-бар */
+/* Progress bar */
 #progress-container {
     display: none;
     margin-top: 20px;
