@@ -14,6 +14,7 @@ uploadImage.addEventListener('change', function () {
                 canvas.width = img.width;
                 canvas.height = img.height;
                 ctx.drawImage(img, 0, 0);
+                canvas.style.display = 'block';
             }
             img.src = event.target.result;
         }
@@ -25,11 +26,8 @@ reduceQuality.addEventListener('click', function () {
     const quality = parseFloat(qualitySelect.value);
     const imgData = canvas.toDataURL('image/jpeg', quality);
     
-    const img = new Image();
-    img.onload = function () {
-        canvas.width = img.width;
-        canvas.height = img.height;
-        ctx.drawImage(img, 0, 0);
-    }
-    img.src = imgData;
+    const link = document.createElement('a');
+    link.href = imgData;
+    link.download = 'reduced-quality-image.jpg';
+    link.click();
 });
