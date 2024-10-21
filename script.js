@@ -24,10 +24,14 @@ uploadImage.addEventListener('change', function () {
 
 reduceQuality.addEventListener('click', function () {
     const quality = parseFloat(qualitySelect.value);
+    // Получаем данные изображения с ухудшенным качеством
     const imgData = canvas.toDataURL('image/jpeg', quality);
     
+    // Создаем элемент <a> для скачивания
     const link = document.createElement('a');
     link.href = imgData;
     link.download = 'reduced-quality-image.jpg';
+    
+    // Программно кликаем по ссылке для автоматической загрузки
     link.click();
 });

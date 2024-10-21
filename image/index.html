@@ -10,23 +10,24 @@
     <header>
         <h1>PicLab - Image Quality Reduction</h1>
     </header>
-    <main>
-        <section id="image-quality">
-            <h2>Reduce Image Quality</h2>
-            <input type="file" id="uploadImage" accept="image/*">
-            <br><br>
-            <label for="quality">Choose quality level:</label>
-            <select id="quality">
-                <option value="1">Worst</option>
-                <option value="0.5">Bad</option>
-                <option value="0.2">Very Bad</option>
-            </select>
-            <br><br>
-            <button id="reduceQuality">Apply</button>
-            <br><br>
-            <canvas id="canvas"></canvas>
-        </section>
+    <main class="section">
+        <h2>Reduce Image Quality</h2>
+        <input type="file" id="uploadImage" accept="image/*">
+        <br><br>
+        <label for="quality">Choose quality level:</label>
+        <select id="quality">
+            <option value="1">Worst</option>
+            <option value="0.5">Bad</option>
+            <option value="0.2">Very Bad</option>
+        </select>
+        <br><br>
+        <button id="reduceQuality">Apply</button>
+        <br><br>
+        <canvas id="canvas"></canvas>
     </main>
+    <footer>
+        <p>&copy; 2024 PicLab</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-/* Minimalist Reset */
+/* Минималистичный сброс стилей */
 * {
     margin: 0;
     padding: 0;
@@ -99,9 +99,34 @@ canvas {
     display: none;
 }
 
+/* Стили для всех разделов сайта */
+.section {
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    font-size: 1.8rem;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.section p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
 footer {
     background-color: #1f1f1f;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
