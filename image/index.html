@@ -16,14 +16,19 @@
         <br><br>
         <label for="quality">Choose quality level:</label>
         <select id="quality">
-            <option value="1">Worst</option>
-            <option value="0.5">Bad</option>
-            <option value="0.2">Very Bad</option>
+            <option value="1">Best</option>
+            <option value="0.5">Medium</option>
+            <option value="0.2">Worst</option>
         </select>
         <br><br>
         <button id="reduceQuality">Apply</button>
         <br><br>
         <canvas id="canvas"></canvas>
+        <br><br>
+        <div id="progress-container">
+            <progress id="progress-bar" value="0" max="100"></progress>
+            <span id="progress-text">0%</span>
+        </div>
     </main>
     <footer>
         <p>&copy; 2024 PicLab</p>
