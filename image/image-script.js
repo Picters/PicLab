@@ -6,7 +6,7 @@ const progressBar = document.getElementById('progress-bar');
 const progressText = document.getElementById('progress-text');
 const progressContainer = document.getElementById('progress-container');
 
-// Убираем отображение изображения после загрузки
+// Загрузка изображения
 uploadImage.addEventListener('change', function () {
     const file = this.files[0];
     if (file) {
@@ -17,7 +17,6 @@ uploadImage.addEventListener('change', function () {
                 canvas.width = img.width;
                 canvas.height = img.height;
                 ctx.drawImage(img, 0, 0);
-                console.log('Image loaded, but not displayed.');
             }
             img.src = event.target.result;
         }
@@ -31,8 +30,6 @@ reduceQuality.addEventListener('click', function () {
         alert('Please upload an image first.');
         return;
     }
-
-    console.log('Starting image pixelation process');
 
     progressContainer.style.display = 'block';
     progressBar.value = 0;
@@ -48,7 +45,8 @@ reduceQuality.addEventListener('click', function () {
         if (progress >= 100) {
             clearInterval(interval);
 
-            const pixelationLevel = 0.05; 
+            // Увеличиваем пикселизацию (уменьшаем картинку до 3% от оригинала)
+            const pixelationLevel = 0.03; // 3% от оригинального размера
             const smallWidth = Math.floor(canvas.width * pixelationLevel);
             const smallHeight = Math.floor(canvas.height * pixelationLevel);
 
@@ -57,21 +55,23 @@ reduceQuality.addEventListener('click', function () {
             smallCanvas.width = smallWidth;
             smallCanvas.height = smallHeight;
 
+            // Сжимаем изображение до минимума
             smallCtx.drawImage(canvas, 0, 0, smallWidth, smallHeight);
+
+            // Затем растягиваем обратно, создавая пиксельный эффект
             ctx.drawImage(smallCanvas, 0, 0, smallWidth, smallHeight, 0, 0, canvas.width, canvas.height);
 
+            // Сохраняем пикселизированное изображение с качеством 0.001
             canvas.toBlob(function (blob) {
                 const link = document.createElement('a');
                 link.href = URL.createObjectURL(blob);
-                link.download = 'very-bad-quality-image.jpg';
+                link.download = 'extremely-bad-quality-image.jpg';
                 link.click();
-
-                console.log('Image pixelated and download initiated.');
 
                 URL.revokeObjectURL(link.href);
 
                 progressContainer.style.display = 'none';
-            }, 'image/jpeg', 0.1);
+            }, 'image/jpeg', 0.001); // Качество установлено на 0.001 для сильного ухудшения
         }
     }, 300);
 });
