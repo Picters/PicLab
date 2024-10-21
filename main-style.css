@@ -1,5 +1,4 @@
-/* Темная тема с минимализмом */
-
+/* Темная тема для главного меню */
 body {
     background-color: #1e1e1e;
     font-family: 'Roboto', sans-serif;
@@ -57,4 +56,17 @@ main {
     font-size: 1.5rem;
     font-weight: bold;
     margin: 0;
+}
+
+/* Стили для неактивной кнопки */
+.function-block.inactive {
+    background-color: #7f8c8d;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.function-block.inactive:hover {
+    background-color: #7f8c8d;
+    transform: none;
 }
