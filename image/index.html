@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PicLab - Image Quality Reduction</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <header>
+        <h1>PicLab - Image Quality Reduction</h1>
+    </header>
+    <main>
+        <section id="image-quality">
+            <h2>Reduce Image Quality</h2>
+            <input type="file" id="uploadImage" accept="image/*">
+            <br><br>
+            <label for="quality">Choose quality level:</label>
+            <select id="quality">
+                <option value="1">Worst</option>
+                <option value="0.5">Bad</option>
+                <option value="0.2">Very Bad</option>
+            </select>
+            <br><br>
+            <button id="reduceQuality">Apply</button>
+            <br><br>
+            <canvas id="canvas"></canvas>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
