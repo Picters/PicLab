@@ -1,4 +1,4 @@
-/* Темная тема с минимализмом для Image Quality Reduction */
+/* Dark theme with minimalism and modern rounded design for Image Quality Reduction */
 
 body {
     background-color: #1e1e1e;
@@ -18,7 +18,8 @@ header {
     padding: 40px 0;
     font-size: 2.5rem;
     font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 0 0 20px 20px;
 }
 
 main {
@@ -26,8 +27,8 @@ main {
     margin: 60px auto;
     padding: 40px;
     background-color: #34495e;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
 
@@ -44,7 +45,7 @@ label {
     display: block;
 }
 
-/* Кастомная кнопка для загрузки файла */
+/* Custom file upload button */
 input[type="file"] {
     display: none;
 }
@@ -57,14 +58,15 @@ label.custom-file-upload {
     color: white;
     font-size: 1.2rem;
     font-weight: bold;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 20px;
 }
 
 label.custom-file-upload:hover {
     background-color: #16a085;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
 button {
@@ -74,24 +76,26 @@ button {
     margin: 15px 0;
     font-size: 1.1rem;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     background-color: #1abc9c;
     color: white;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 button:hover {
     background-color: #16a085;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
 button:focus, input:focus {
     outline: none;
-    box-shadow: 0 0 10px rgba(26, 188, 156, 0.5);
+    box-shadow: 0 0 15px rgba(26, 188, 156, 0.5);
 }
 
-/* Прогресс-бар */
+/* Progress bar */
 #progress-container {
     display: none;
     margin-top: 20px;
@@ -102,17 +106,31 @@ button:focus, input:focus {
 #progress-bar {
     width: 100%;
     height: 25px;
-    border-radius: 12px;
+    border-radius: 15px;
     background-color: #ecf0f1;
     overflow: hidden;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 #progress-bar::-webkit-progress-value {
     background-color: #1abc9c;
+    border-radius: 15px;
 }
 
 #progress-text {
     font-size: 1.2rem;
     margin-top: 15px;
     color: #1abc9c;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.25);
+    margin-top: 60px;
 }

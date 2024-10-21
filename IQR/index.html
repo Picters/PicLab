@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PicLab - Image Quality Reduction</title>
+    <title>PicLab - IQR</title>
     <link rel="stylesheet" href="iqr-style.css">
 </head>
 <body>
     <header>
-        <h1>Image Quality Reduction</h1>
+        <h1>PicLab - IQR</h1>
     </header>
     <main class="section">
-        <h2>Reduce Image Quality</h2>
+        <h2>Image Quality Reduction</h2>
 
-        <!-- Кнопка для загрузки изображения -->
+        <!-- Custom image upload button -->
         <label class="custom-file-upload">
             Choose an Image
             <input type="file" id="uploadImage" accept="image/*">
         </label>
 
-        <!-- Галочки для выбора контраста и графики -->
+        <!-- Options for contrast and graphics -->
         <label>
             <input type="checkbox" id="contrastOption"> Contrast (Max Contrast)
         </label>
@@ -29,7 +29,7 @@
         </label>
         <br><br>
 
-        <!-- Кнопка "Apply" -->
+        <!-- Apply button -->
         <button id="applyChanges">Apply</button>
         <canvas id="canvas" style="display:none;"></canvas>
         <div id="progress-container">
