@@ -9,8 +9,8 @@ const progressContainer = document.getElementById('progress-container');
 videoInput.addEventListener('change', function () {
     const file = this.files[0];
     if (file) {
-        // Здесь вы можете обработать загруженное видео
-        console.log('Видео загружено:', file.name);
+        // Обработка загруженного видео
+        console.log('Video uploaded:', file.name);
     }
 });
 
@@ -19,11 +19,11 @@ applyChanges.addEventListener('click', function () {
     const quality = qualitySelect.value;
 
     if (!videoInput.files.length) {
-        alert('Пожалуйста, выберите видео файл.');
+        alert('Please upload a video file.');
         return;
     }
 
-    console.log('Применение изменений:', { fps, quality });
+    console.log('Applying changes:', { fps, quality });
 
     // Показываем прогресс-бар
     progressContainer.style.display = 'block';
@@ -39,10 +39,18 @@ applyChanges.addEventListener('click', function () {
         if (progress >= 100) {
             clearInterval(interval);
 
-            // Здесь должна быть логика обработки видео с выбранными параметрами
-            alert('Видео обработано с FPS: ' + fps + ' и качеством: ' + quality + 'p');
+            // Логика обработки видео должна быть здесь
+            alert(`Video processed with FPS: ${fps} and Quality: ${quality}p`);
 
-            // Скрываем прогресс-бар
+            // Скачивание готового видео
+            const link = document.createElement('a');
+            link.href = 'path/to/your/video.mp4'; // Здесь укажите путь к готовому видео
+            link.download = 'modifed.mp4'; // Название для скачиваемого файла
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // Скрываем прогресс-бар после завершения
             progressContainer.style.display = 'none';
         }
     }, 500);
