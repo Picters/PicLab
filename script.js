@@ -4,6 +4,7 @@ const uploadImage = document.getElementById('uploadImage');
 const reduceQuality = document.getElementById('reduceQuality');
 const qualitySelect = document.getElementById('quality');
 
+// Загрузка изображения
 uploadImage.addEventListener('change', function () {
     const file = this.files[0];
     if (file) {
@@ -22,16 +23,27 @@ uploadImage.addEventListener('change', function () {
     }
 });
 
+// Применение ухудшения качества и скачивание изображения
 reduceQuality.addEventListener('click', function () {
     const quality = parseFloat(qualitySelect.value);
-    // Получаем данные изображения с ухудшенным качеством
-    const imgData = canvas.toDataURL('image/jpeg', quality);
-    
-    // Создаем элемент <a> для скачивания
-    const link = document.createElement('a');
-    link.href = imgData;
-    link.download = 'reduced-quality-image.jpg';
-    
-    // Программно кликаем по ссылке для автоматической загрузки
-    link.click();
+
+    // Проверяем, есть ли изображение на холсте
+    if (canvas.width === 0 || canvas.height === 0) {
+        alert('Please upload an image first.');
+        return;
+    }
+
+    // Получаем данные изображения с нужным качеством
+    canvas.toBlob(function (blob) {
+        // Создаем ссылку для скачивания изображения
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'reduced-quality-image.jpg';
+
+        // Программно кликаем по ссылке для скачивания
+        link.click();
+
+        // Освобождаем объект URL после скачивания
+        URL.revokeObjectURL(link.href);
+    }, 'image/jpeg', quality);
 });
