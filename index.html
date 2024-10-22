@@ -8,48 +8,126 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-<style>
-        .header-thin {
-            width: 100%;
-            background: #34495e;
-            padding: 10px 0; /* Reduce padding to make the header thinner */
-            text-align: center;
-            color: #f39c12;
-            font-size: 2rem; /* Reduce font size */
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            border-radius: 0 0 20px 20px;
-            backdrop-filter: blur(10px); /* Add blur effect */
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-    </style>
     <style>
+        /* General Reset and Body Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: #ecf0f1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Header Styling */
         .header-thinner {
             width: 100%;
-            background: #34495e;
-            padding: 5px 0; /* Further reduce padding to make the header even thinner */
+            background: rgba(52, 73, 94, 0.8);
+            padding: 3px 0;
             text-align: center;
             color: #f39c12;
-            font-size: 1.5rem; /* Further reduce font size */
+            font-size: 1.2rem;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            border-radius: 0 0 20px 20px;
-            backdrop-filter: blur(10px); /* Add blur effect */
+            border-radius: 0 0 15px 15px;
+            backdrop-filter: blur(15px);
             position: sticky;
             top: 0;
             z-index: 1000;
+            transition: transform 0.3s ease-in-out;
         }
-        .function-block::after {
-            display: none; /* Remove the orange line under function blocks */
+
+        .header-thinner:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
         }
-        .function-block h2 {
-            text-decoration: none; /* Remove the underline from the block titles */
-            overflow-wrap: break-word; /* Ensure text wraps to avoid overflow */
+
+        /* Image Tools Block Styling */
+        .image-tools-block {
+            background: rgba(127, 140, 141, 0.8);
+            color: #ffffff;
+            text-align: center;
+            padding: 15px;
+            font-size: 2.2rem;
+            font-weight: bold;
+            border-radius: 20px;
+            margin: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .image-tools-block:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Function Blocks Section */
+        .function-blocks {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            width: 85%;
+            max-width: 1200px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* Function Block Styling */
+        .function-block, .function-block.inactive {
+            background: rgba(52, 73, 94, 0.8);
+            color: #ecf0f1;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+            position: relative;
+            overflow-wrap: break-word;
+        }
+
+        .function-block:hover {
+            background-color: #f39c12;
+            color: #ffffff;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+            transform: translateY(-8px);
+        }
+
+        .function-block.inactive {
+            background-color: rgba(127, 140, 141, 0.7);
+            color: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: rgba(52, 73, 94, 0.9);
+            width: 100%;
+            padding: 20px;
+            color: #ecf0f1;
+            text-align: center;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.4);
+            margin-top: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        footer:hover {
+            transform: translateY(5px);
+        }
+
+        .version {
+            font-size: 0.8rem;
+            color: #bdc3c7;
+            margin-top: 5px;
         }
     </style>
-    </head>
+</head>
 <body>
     <header class="header-thinner">
         <h1>PicLab</h1>
