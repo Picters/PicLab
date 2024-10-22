@@ -25,9 +25,33 @@
             z-index: 1000;
         }
     </style>
+    <style>
+        .header-thinner {
+            width: 100%;
+            background: #34495e;
+            padding: 5px 0; /* Further reduce padding to make the header even thinner */
+            text-align: center;
+            color: #f39c12;
+            font-size: 1.5rem; /* Further reduce font size */
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 0 0 20px 20px;
+            backdrop-filter: blur(10px); /* Add blur effect */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .function-block::after {
+            display: none; /* Remove the orange line under function blocks */
+        }
+        .function-block h2 {
+            text-decoration: none; /* Remove the underline from the block titles */
+            overflow-wrap: break-word; /* Ensure text wraps to avoid overflow */
+        }
+    </style>
     </head>
 <body>
-    <header class="header-thin">
+    <header class="header-thinner">
         <h1>PicLab</h1>
     </header>
     <div class="image-tools-block">
