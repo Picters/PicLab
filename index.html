@@ -8,9 +8,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-</head>
+<style>
+        .header-thin {
+            width: 100%;
+            background: #34495e;
+            padding: 10px 0; /* Reduce padding to make the header thinner */
+            text-align: center;
+            color: #f39c12;
+            font-size: 2rem; /* Reduce font size */
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 0 0 20px 20px;
+            backdrop-filter: blur(10px); /* Add blur effect */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+    </style>
+    </head>
 <body>
-    <header>
+    <header class="header-thin">
         <h1>PicLab</h1>
     </header>
     <div class="image-tools-block">
